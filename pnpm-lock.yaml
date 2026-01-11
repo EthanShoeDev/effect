@@ -783,6 +783,43 @@ importers:
         specifier: ^10.25.0
         version: 10.28.0
       drizzle-orm:
+        specifier: ^0.43.1
+        version: 0.43.1(@cloudflare/workers-types@4.20250715.0)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(kysely@0.28.2)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7)
+      effect:
+        specifier: workspace:^
+        version: link:../effect
+    publishDirectory: dist
+
+  packages/sql-drizzle-v1:
+    devDependencies:
+      '@effect/experimental':
+        specifier: workspace:^
+        version: link:../experimental
+      '@effect/platform':
+        specifier: workspace:^
+        version: link:../platform
+      '@effect/platform-node':
+        specifier: workspace:^
+        version: link:../platform-node
+      '@effect/sql':
+        specifier: workspace:^
+        version: link:../sql
+      '@effect/sql-mysql2':
+        specifier: workspace:^
+        version: link:../sql-mysql2
+      '@effect/sql-pg':
+        specifier: workspace:^
+        version: link:../sql-pg
+      '@effect/sql-sqlite-node':
+        specifier: workspace:^
+        version: link:../sql-sqlite-node
+      '@testcontainers/mysql':
+        specifier: ^10.25.0
+        version: 10.28.0
+      '@testcontainers/postgresql':
+        specifier: ^10.25.0
+        version: 10.28.0
+      drizzle-orm:
         specifier: ^1.0.0-beta.1
         version: 1.0.0-beta.9-e89174b(@cloudflare/workers-types@4.20250715.0)(@effect/sql-pg@packages+sql-pg)(@effect/sql@packages+sql)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/mssql@9.1.8)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(mssql@11.0.1)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7)
       effect:
@@ -3977,6 +4014,95 @@ packages:
   dotenv@8.6.0:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
+
+  drizzle-orm@0.43.1:
+    resolution: {integrity: sha512-dUcDaZtE/zN4RV/xqGrVSMpnEczxd5cIaoDeor7Zst9wOe/HzC/7eAaulywWGYXdDEc9oBPMjayVEDg0ziTLJA==}
+    peerDependencies:
+      '@aws-sdk/client-rds-data': '>=3'
+      '@cloudflare/workers-types': '>=4'
+      '@electric-sql/pglite': '>=0.2.0'
+      '@libsql/client': '>=0.10.0'
+      '@libsql/client-wasm': '>=0.10.0'
+      '@neondatabase/serverless': '>=0.10.0'
+      '@op-engineering/op-sqlite': '>=2'
+      '@opentelemetry/api': ^1.4.1
+      '@planetscale/database': '>=1.13'
+      '@prisma/client': '*'
+      '@tidbcloud/serverless': '*'
+      '@types/better-sqlite3': '*'
+      '@types/pg': '*'
+      '@types/sql.js': '*'
+      '@vercel/postgres': '>=0.8.0'
+      '@xata.io/client': '*'
+      better-sqlite3: '>=7'
+      bun-types: '*'
+      expo-sqlite: '>=14.0.0'
+      gel: '>=2'
+      knex: '*'
+      kysely: '*'
+      mysql2: '>=2'
+      pg: '>=8'
+      postgres: '>=3'
+      prisma: '*'
+      sql.js: '>=1'
+      sqlite3: '>=5'
+    peerDependenciesMeta:
+      '@aws-sdk/client-rds-data':
+        optional: true
+      '@cloudflare/workers-types':
+        optional: true
+      '@electric-sql/pglite':
+        optional: true
+      '@libsql/client':
+        optional: true
+      '@libsql/client-wasm':
+        optional: true
+      '@neondatabase/serverless':
+        optional: true
+      '@op-engineering/op-sqlite':
+        optional: true
+      '@opentelemetry/api':
+        optional: true
+      '@planetscale/database':
+        optional: true
+      '@prisma/client':
+        optional: true
+      '@tidbcloud/serverless':
+        optional: true
+      '@types/better-sqlite3':
+        optional: true
+      '@types/pg':
+        optional: true
+      '@types/sql.js':
+        optional: true
+      '@vercel/postgres':
+        optional: true
+      '@xata.io/client':
+        optional: true
+      better-sqlite3:
+        optional: true
+      bun-types:
+        optional: true
+      expo-sqlite:
+        optional: true
+      gel:
+        optional: true
+      knex:
+        optional: true
+      kysely:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      postgres:
+        optional: true
+      prisma:
+        optional: true
+      sql.js:
+        optional: true
+      sqlite3:
+        optional: true
 
   drizzle-orm@1.0.0-beta.9-e89174b:
     resolution: {integrity: sha512-B5KR/qYMZ0JMOurK+0xi1ObpOQcgrjaC9wHUiU2eTJjLemuh2CoQIw6yur68NxZG6Xcd0b9qghUNC/78/bEfbg==}
@@ -10321,6 +10447,21 @@ snapshots:
       domhandler: 5.0.3
 
   dotenv@8.6.0: {}
+
+  drizzle-orm@0.43.1(@cloudflare/workers-types@4.20250715.0)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(kysely@0.28.2)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7):
+    optionalDependencies:
+      '@cloudflare/workers-types': 4.20250715.0
+      '@libsql/client': 0.12.0
+      '@op-engineering/op-sqlite': 7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
+      '@opentelemetry/api': 1.9.0
+      '@types/better-sqlite3': 7.6.13
+      '@types/pg': 8.15.6
+      better-sqlite3: 11.10.0
+      bun-types: 1.2.18(@types/react@19.1.8)
+      kysely: 0.28.2
+      mysql2: 3.14.2
+      pg: 8.16.3
+      postgres: 3.4.7
 
   drizzle-orm@1.0.0-beta.9-e89174b(@cloudflare/workers-types@4.20250715.0)(@effect/sql-pg@packages+sql-pg)(@effect/sql@packages+sql)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/mssql@9.1.8)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(mssql@11.0.1)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7):
     dependencies:
