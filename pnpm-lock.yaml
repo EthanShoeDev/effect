@@ -783,8 +783,8 @@ importers:
         specifier: ^10.25.0
         version: 10.28.0
       drizzle-orm:
-        specifier: ^0.43.1
-        version: 0.43.1(@cloudflare/workers-types@4.20250715.0)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(kysely@0.28.2)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7)
+        specifier: ^1.0.0-beta.1
+        version: 1.0.0-beta.9-e89174b(@cloudflare/workers-types@4.20250715.0)(@effect/sql-pg@packages+sql-pg)(@effect/sql@packages+sql)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/mssql@9.1.8)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(mssql@11.0.1)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7)
       effect:
         specifier: workspace:^
         version: link:../effect
@@ -2771,6 +2771,9 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
+  '@tediousjs/connection-string@0.5.0':
+    resolution: {integrity: sha512-7qSgZbincDDDFyRweCIEvZULFAw5iz/DeunhvuxpL31nfntX3P4Yd4HkHBRg9H8CdqY1e5WFN1PZIz/REL9MVQ==}
+
   '@testcontainers/mssqlserver@10.28.0':
     resolution: {integrity: sha512-edyXfjU6rK7Jt/2Pei4HI4tt2rgOBJ6MM79YbwAp60fU0XIQHEdaDdlVtpVjArVNfnaS0kMUG3WxGINjtDhOyQ==}
 
@@ -2907,6 +2910,9 @@ packages:
   '@types/minimatch@6.0.0':
     resolution: {integrity: sha512-zmPitbQ8+6zNutpwgcQuLcsEpn/Cj54Kbn7L5pX0Os5kdWplB7xPgEh/g+SWOB/qmows2gpuCaPyduq8ZZRnxA==}
     deprecated: This is a stub types definition. minimatch provides its own type definitions, so you do not need this installed.
+
+  '@types/mssql@9.1.8':
+    resolution: {integrity: sha512-mt9h5jWj+DYE5jxnKaWSV/GqDf9FV52XYVk6T3XZF69noEe+JJV6MKirii48l81+cjmAkSq+qeKX+k61fHkYrQ==}
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
@@ -3661,6 +3667,10 @@ packages:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
 
+  commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
+    engines: {node: '>=16'}
+
   commander@12.1.0:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
@@ -3968,11 +3978,13 @@ packages:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
 
-  drizzle-orm@0.43.1:
-    resolution: {integrity: sha512-dUcDaZtE/zN4RV/xqGrVSMpnEczxd5cIaoDeor7Zst9wOe/HzC/7eAaulywWGYXdDEc9oBPMjayVEDg0ziTLJA==}
+  drizzle-orm@1.0.0-beta.9-e89174b:
+    resolution: {integrity: sha512-B5KR/qYMZ0JMOurK+0xi1ObpOQcgrjaC9wHUiU2eTJjLemuh2CoQIw6yur68NxZG6Xcd0b9qghUNC/78/bEfbg==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
+      '@effect/sql': ^0.48.5
+      '@effect/sql-pg': ^0.49.7
       '@electric-sql/pglite': '>=0.2.0'
       '@libsql/client': '>=0.10.0'
       '@libsql/client-wasm': '>=0.10.0'
@@ -3981,18 +3993,23 @@ packages:
       '@opentelemetry/api': ^1.4.1
       '@planetscale/database': '>=1.13'
       '@prisma/client': '*'
+      '@sqlitecloud/drivers': '>=1.0.653'
       '@tidbcloud/serverless': '*'
+      '@tursodatabase/database': '>=0.2.1'
+      '@tursodatabase/database-common': '>=0.2.1'
+      '@tursodatabase/database-wasm': '>=0.2.1'
       '@types/better-sqlite3': '*'
+      '@types/mssql': ^9.1.4
       '@types/pg': '*'
       '@types/sql.js': '*'
+      '@upstash/redis': '>=1.34.7'
       '@vercel/postgres': '>=0.8.0'
       '@xata.io/client': '*'
-      better-sqlite3: '>=7'
+      better-sqlite3: '>=9.3.0'
       bun-types: '*'
       expo-sqlite: '>=14.0.0'
       gel: '>=2'
-      knex: '*'
-      kysely: '*'
+      mssql: ^11.0.1
       mysql2: '>=2'
       pg: '>=8'
       postgres: '>=3'
@@ -4003,6 +4020,10 @@ packages:
       '@aws-sdk/client-rds-data':
         optional: true
       '@cloudflare/workers-types':
+        optional: true
+      '@effect/sql':
+        optional: true
+      '@effect/sql-pg':
         optional: true
       '@electric-sql/pglite':
         optional: true
@@ -4020,13 +4041,23 @@ packages:
         optional: true
       '@prisma/client':
         optional: true
+      '@sqlitecloud/drivers':
+        optional: true
       '@tidbcloud/serverless':
+        optional: true
+      '@tursodatabase/database':
+        optional: true
+      '@tursodatabase/database-common':
+        optional: true
+      '@tursodatabase/database-wasm':
         optional: true
       '@types/better-sqlite3':
         optional: true
       '@types/pg':
         optional: true
       '@types/sql.js':
+        optional: true
+      '@upstash/redis':
         optional: true
       '@vercel/postgres':
         optional: true
@@ -4039,10 +4070,6 @@ packages:
       expo-sqlite:
         optional: true
       gel:
-        optional: true
-      knex:
-        optional: true
-      kysely:
         optional: true
       mysql2:
         optional: true
@@ -5557,6 +5584,11 @@ packages:
   msgpackr@1.11.4:
     resolution: {integrity: sha512-uaff7RG9VIC4jacFW9xzL3jc0iM32DNHe4jYVycBcjUePT/Klnfj7pqtWJt9khvDFizmjN2TlYniYmSS2LIaZg==}
 
+  mssql@11.0.1:
+    resolution: {integrity: sha512-KlGNsugoT90enKlR8/G36H0kTxPthDhmtNUCwEHvgRza5Cjpjoj+P2X6eMpFUDN7pFrJZsKadL4x990G8RBE1w==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   multipasta@0.2.7:
     resolution: {integrity: sha512-KPA58d68KgGil15oDqXjkUBEBYc00XvbPj5/X+dyzeo/lWm9Nc25pQRlf1D+gv4OpK7NM0J1odrbu9JNNGvynA==}
 
@@ -6232,6 +6264,9 @@ packages:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
+  rfdc@1.4.1:
+    resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
+
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     deprecated: Rimraf versions prior to v4 are no longer supported
@@ -6614,6 +6649,10 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+
+  tarn@3.0.2:
+    resolution: {integrity: sha512-51LAVKUSZSVfI05vjPESNc5vwqqZpbXCsU+/+wxlOrUjk2SnFTt97v9ZgQrD4YmxYW1Px6w2KjaDitCfkvgxMQ==}
+    engines: {node: '>=8.0.0'}
 
   tedious@18.6.1:
     resolution: {integrity: sha512-9AvErXXQTd6l7TDd5EmM+nxbOGyhnmdbp/8c3pw+tjaiSXW9usME90ET/CRG1LN1Y9tPMtz/p83z4Q97B4DDpw==}
@@ -8883,6 +8922,8 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
+  '@tediousjs/connection-string@0.5.0': {}
+
   '@testcontainers/mssqlserver@10.28.0':
     dependencies:
       testcontainers: 10.28.0
@@ -9062,6 +9103,14 @@ snapshots:
   '@types/minimatch@6.0.0':
     dependencies:
       minimatch: 10.0.3
+
+  '@types/mssql@9.1.8':
+    dependencies:
+      '@types/node': 22.16.4
+      tarn: 3.0.2
+      tedious: 18.6.1
+    transitivePeerDependencies:
+      - supports-color
 
   '@types/node@12.20.55': {}
 
@@ -9965,6 +10014,8 @@ snapshots:
 
   commander@10.0.1: {}
 
+  commander@11.1.0: {}
+
   commander@12.1.0: {}
 
   commander@2.20.3: {}
@@ -10271,9 +10322,14 @@ snapshots:
 
   dotenv@8.6.0: {}
 
-  drizzle-orm@0.43.1(@cloudflare/workers-types@4.20250715.0)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(kysely@0.28.2)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7):
+  drizzle-orm@1.0.0-beta.9-e89174b(@cloudflare/workers-types@4.20250715.0)(@effect/sql-pg@packages+sql-pg)(@effect/sql@packages+sql)(@libsql/client@0.12.0)(@op-engineering/op-sqlite@7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(@opentelemetry/api@1.9.0)(@types/better-sqlite3@7.6.13)(@types/mssql@9.1.8)(@types/pg@8.15.6)(better-sqlite3@11.10.0)(bun-types@1.2.18(@types/react@19.1.8))(mssql@11.0.1)(mysql2@3.14.2)(pg@8.16.3)(postgres@3.4.7):
+    dependencies:
+      '@types/mssql': 9.1.8
+      mssql: 11.0.1
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250715.0
+      '@effect/sql': link:packages/sql
+      '@effect/sql-pg': link:packages/sql-pg
       '@libsql/client': 0.12.0
       '@op-engineering/op-sqlite': 7.1.0(react-native@0.80.1(@babel/core@7.28.5)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
       '@opentelemetry/api': 1.9.0
@@ -10281,7 +10337,6 @@ snapshots:
       '@types/pg': 8.15.6
       better-sqlite3: 11.10.0
       bun-types: 1.2.18(@types/react@19.1.8)
-      kysely: 0.28.2
       mysql2: 3.14.2
       pg: 8.16.3
       postgres: 3.4.7
@@ -12114,6 +12169,17 @@ snapshots:
     optionalDependencies:
       msgpackr-extract: 3.0.3
 
+  mssql@11.0.1:
+    dependencies:
+      '@tediousjs/connection-string': 0.5.0
+      commander: 11.1.0
+      debug: 4.4.3
+      rfdc: 1.4.1
+      tarn: 3.0.2
+      tedious: 18.6.1
+    transitivePeerDependencies:
+      - supports-color
+
   multipasta@0.2.7: {}
 
   mysql2@3.14.2:
@@ -12860,6 +12926,8 @@ snapshots:
 
   reusify@1.1.0: {}
 
+  rfdc@1.4.1: {}
+
   rimraf@3.0.2:
     dependencies:
       glob: 7.2.3
@@ -13333,6 +13401,8 @@ snapshots:
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
+
+  tarn@3.0.2: {}
 
   tedious@18.6.1:
     dependencies:
